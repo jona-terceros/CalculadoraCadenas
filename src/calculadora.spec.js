@@ -20,5 +20,8 @@ describe("Calcular Sumar", () => {
   it("deberia especificar el separador", () => {
     expect(calculadora("//[;] 6;7;4")).toEqual(17);
   });
+  it("deberia sumar con los separadores", () => {
+    expect(calculadora("//[;] 7,3-6;4")).toEqual(20);
+  });
 
 });
