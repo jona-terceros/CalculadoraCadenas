@@ -1,17 +1,17 @@
 function calculadora(cadena) {
-    if(cadena=="")
+    if(tamanoCadena(cadena)==0)
     {
       return 0;
     }
     else{
         
-        if(cadena.length > 1){
+        if(tamanoCadena(cadena) > 1){
 
             if(cadena[0]=="/")
             {
                 let cadenas = cadena.split(" ");
                 let delimitador = cadenas[0][3];
-                let cadenaNumeros = conversion(splitStringByTokens(cadenas[1], [',','-',delimitador]));
+                let cadenaNumeros = conversion(splitStringByTokens(cadenas[1], [',', '-','*','%', delimitador]));
                 return sumar(cadenaNumeros);
             }
             else{
@@ -46,5 +46,8 @@ function splitStringByTokens(str, tokens) {
     }
     str = str.split(separator);
     return str;
+  }
+  function tamanoCadena(cadena){
+    return cadena.length;
   }
   export default calculadora;

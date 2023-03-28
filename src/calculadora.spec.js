@@ -23,5 +23,8 @@ describe("Calcular Sumar", () => {
   it("deberia sumar con los separadores", () => {
     expect(calculadora("//[;] 7,3-6;4")).toEqual(20);
   });
+  it("deberia sumar con los separadores", () => {
+    expect(calculadora("//[*][%] 1*2%3,7-9")).toEqual(22);
+  });
 
 });
