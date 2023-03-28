@@ -1,19 +1,13 @@
-import sumar from "./sumador";
-import multiplicar from "./multiplicador";
+import calculadora from "./calculadora.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
+const cadena = document.querySelector("#cadena");
 const form = document.querySelector("#sumar-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
-
-
+  const valor = parseInt(cadena.value);
+  const resultado = calculadora(valor);
+  div.innerHTML = "<p>" + resultado + "</p>";
 });
-
