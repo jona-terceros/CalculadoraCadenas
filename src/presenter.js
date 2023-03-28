@@ -7,7 +7,8 @@ const div = document.querySelector("#resultado-div");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const valor = parseInt(cadena.value);
+  const valor = cadena.value;
   const resultado = calculadora(valor);
+
   div.innerHTML = "<p>" + resultado + "</p>";
 });
