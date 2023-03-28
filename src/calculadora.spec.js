@@ -13,6 +13,8 @@ describe("Calcular Sumar", () => {
   it("deberia retornar 10", () => {
     expect(calculadora("3,2,1,4")).toEqual(10);
   });
-
+  it("deberia sumar con el guion como separador", () => {
+    expect(calculadora("3-2-6")).toEqual(11);
+  });
 
 });
