@@ -7,6 +7,9 @@ describe("Calcular Sumar", () => {
   it("deberia retornar 1 ", () => {
     expect(calculadora("1")).toEqual(1);
   });
+  it("deberia retornar 5 ", () => {
+    expect(calculadora("3,2")).toEqual(5);
+  });
 
 
 });
