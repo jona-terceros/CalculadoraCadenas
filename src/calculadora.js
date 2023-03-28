@@ -9,14 +9,10 @@ function calculadora(cadena) {
 
             if(cadena[0]=="/")
             {
-                let cadenas = cadena.split(" ");
-                let delimitador = cadenas[0][3];
-                let cadenaNumeros = conversion(splitStringByTokens(cadenas[1], [',', '-','*','%', delimitador]));
-                return sumar(cadenaNumeros);
+                return calcularConDelimitador(cadena);
             }
             else{
-                let cadenaNumeros = conversion(cadena.split(/,|-/));
-                return sumar(cadenaNumeros);
+                return calcularConSeparadores(cadena);
             }
            
         }
@@ -24,7 +20,22 @@ function calculadora(cadena) {
             return parseInt(cadena);
         }
      }
-    }
+}
+function calcularConDelimitador(cadena) {
+
+    const cadenas = cadena.split(" ");
+    const delimitador = cadenas[0][3];
+    const numerosSeparados = splitStringByTokens(cadenas[1], [",", "-", "*", "%", delimitador]);
+    const numerosConvertidos = conversion(numerosSeparados);
+    return sumar(numerosConvertidos);
+  }
+  
+  function calcularConSeparadores(cadena) {
+    const numerosSeparados = cadena.split(/,|-/);
+    const numerosConvertidos = conversion(numerosSeparados);
+    return sumar(numerosConvertidos);
+   
+  }
 function sumar(numeros){
     let suma = 0;
     for (let i = 0 ; i < numeros.length; i++){
@@ -47,7 +58,8 @@ function splitStringByTokens(str, tokens) {
     str = str.split(separator);
     return str;
   }
-  function tamanoCadena(cadena){
+function tamanoCadena(cadena){
     return cadena.length;
-  }
+}
+
   export default calculadora;
